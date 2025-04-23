@@ -1,17 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FF Config Tool</title>
+  <title>DPI CONFIG LUXURY 2.0</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    .btn { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; }
+    body {
+      background-color: black;
+      font-family: 'Courier New', cursive;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #2c2c2c;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 15px 0 5px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background-color: #444;
+      color: white;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Free Fire Config Tool</h1>
-  <p>Chào mừng bạn! Dưới đây là các tùy chọn:</p>
-  <button class="btn">Cài DNS Tối Ưu</button>
+  <div class="container">
+    <img src="your-image-url.jpg" alt="Banner">
+    <h1>DPI CONFIG LUXURY</h1>
+    <h2>2.0</h2>
+    <p>KEY</p>
+    <input type="password" id="keyInput" placeholder="••••">
+    <br>
+    <button onclick="checkKey()">Login</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    const VALID_KEYS = ["freefire2025", "luxurytool", "vipaccess"]; // Danh sách key cho phép
+
+    function checkKey() {
+      const inputKey = document.getElementById("keyInput").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (VALID_KEYS.includes(inputKey)) {
+        // Đúng key => chuyển trang
+        window.location.href = "home.html"; // Trang sau khi login thành công
+      } else {
+        errorMsg.textContent = "KEY không đúng!";
+      }
+    }
+  </script>
 </body>
 </html>
 
