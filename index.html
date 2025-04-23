@@ -78,8 +78,11 @@
       const errorMsg = document.getElementById("errorMsg");
 
       if (VALID_KEYS.includes(inputKey)) {
-        // Đúng key => chuyển trang
-        window.location.href = "home.html"; // Trang sau khi login thành công
+        // Nếu key hợp lệ, hiển thị thông báo và chuyển trang sau 2 giây
+        errorMsg.textContent = ""; // Xóa thông báo lỗi nếu key đúng
+        setTimeout(function() {
+          window.location.href = "home.html"; // Chuyển hướng đến trang home.html
+        }, 2000); // 2 giây sau khi login thành công
       } else {
         errorMsg.textContent = "KEY không đúng!";
       }
@@ -87,4 +90,3 @@
   </script>
 </body>
 </html>
-
